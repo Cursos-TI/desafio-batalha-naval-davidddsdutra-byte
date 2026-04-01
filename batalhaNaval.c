@@ -19,7 +19,7 @@ int main() {
         }
    }
             
- int horizontal[navio] = {3, 3, 3};
+ int horizontal[navio] = {3,3,3};
  int vertical[navio] = {3, 3, 3};
            
          int linhaH = 2, colunaH = 3; 
@@ -33,9 +33,6 @@ int main() {
         tabuleiro [linhaV + i][colunaV] = navio;
     }
              
-
-   
-
     printf("TABULEIRO BATALHA NAVAL:\n\n");
 
     for (int i = 0; i < 10 ; i++) {
