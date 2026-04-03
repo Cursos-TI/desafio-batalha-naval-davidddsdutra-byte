@@ -29,6 +29,10 @@ int main() {
         for (int i = 0; i < navio; i++) {
         tabuleiro [linhaV + i][colunaV] = navio;
     }
+ // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
+    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
+    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
+    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.    
              
           int linhaDiagonal1 = 7, colunaDiagonal1 = 7;
         int linhaDiagonal2 = 0, colunaDiagonal2 = 9;
@@ -41,8 +45,38 @@ int main() {
         for (int i = 0; i < navio; i++) {
         tabuleiro [linhaDiagonal2 + i][colunaDiagonal2 - i] = navio;
     }
+ // Nível Mestre - Habilidades Especiais com Matrizes
+    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
+    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
+    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
+         int cone = 1;
+    // Inicializar a matriz com loops aninhados e condicionais para o padrão de cone
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            // Condicional para determinar se a posição está afetada pelo cone
+            if ((i == 1 && j == 2) ||
+                ((i == 2 || i == 2) && j >= 1 && j <= 3) ||
+                (i == 3 && j >= 0 && j <= 4)) {
+                tabuleiro[i][j] = cone;
+            } 
+        }
+    }  
+    // Inicializar a matriz com loops aninhados e condicionais para o padrão de octaedro
+         int octaedro = 2;
+
+    for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+    // Condicional para determinar se a posição está afetada pelo octaedro
+        if((i == 7 && j == 3) ||
+           (i == 8 && (j >= 2 && j <= 4)) ||
+           (i == 9 && j == 3)) {
+            tabuleiro[i][j] = octaedro;
+        }
+    }
+}
+
     // Exibição do tabuleiro completo
-    printf("TABULEIRO BATALHA NAVAL:\n\n");
+    printf("\nTABULEIRO BATALHA NAVAL:\n\n");
 
     for (int i = 0; i < 10 ; i++) {
         for (int j = 0; j < 10; j++) {
@@ -50,16 +84,6 @@ int main() {
         }
         printf("\n");
     }
-
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
-
-    // Nível Mestre - Habilidades Especiais com Matrizes
-    // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
-    // Sugestão: Utilize estruturas de repetição aninhadas para preencher as áreas afetadas por essas habilidades no tabuleiro.
-    // Sugestão: Exiba o tabuleiro com as áreas afetadas, utilizando 0 para áreas não afetadas e 1 para áreas atingidas.
 
     // Exemplos de exibição das habilidades:
     // Exemplo para habilidade em cone:
